@@ -1,7 +1,10 @@
 <?php
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+	
+	use App\Http\Controllers\AuthenticationController;
+	use App\Models\User;
+	use Illuminate\Http\Request;
+	use Illuminate\Support\Facades\Auth;
+	use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+	
+	Route::post('/register', [AuthenticationController::class, 'register'])
+		->name('register');
+	
+	Route::post('/login', [AuthenticationController::class, 'login'])
+		->name('login');
+	
+	
+	// AUTH APIS (FOR AUTHENTICATED USER)
+	Route::middleware(['auth:sanctum'])
+		->group(function () {
+			
+			// GET LOGGED USER DATA
+			Route::get('/profile', function () {
+				return Auth::user();
+			})->name('profile');
+
+			// GET USERS LIST
+			Route::get('/users/all', function () {
+				return User::all();
+			})->name('all-users');
+			
+			// LOGOUT USER
+			Route::delete('/logout', [AuthenticationController::class, 'logout'])
+				->name('logout');
+			
+		});
