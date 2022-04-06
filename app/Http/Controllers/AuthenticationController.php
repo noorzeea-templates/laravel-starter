@@ -24,8 +24,7 @@
 		{
 			return auth()->user()->tokens()->delete();
 		}
-
-
+		
 //    CREATE A NEW USER
 		public function register(Request $request)
 		{
