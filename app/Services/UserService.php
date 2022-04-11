@@ -48,7 +48,6 @@
 			$user_token = auth()->user()->createToken('API Token')->plainTextToken;
 			
 			return $this->success("Sign in successful",200, $user_token );
-//			return $user_token;
 		}
 		
 		public function getAll()
