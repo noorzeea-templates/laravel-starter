@@ -39,11 +39,7 @@ return [
 			'driver' => 'mongodb',
 			'host' => env('DB_HOST', '127.0.0.1'),
 			'port' => env('DB_PORT', 27017),
-			'database' => env('DB_DATABASE', 'groupay-mongodb'),
-//                'username' => env('DB_USERNAME', 'cyclepard-test-mongodb'),
-//                'password' => env('DB_PASSWORD', '')
-//            'dsn' => env('DB_URI', 'mongodb+srv://cyclepard-test-mongodb:null@<cyclepard-test-mongodb.mongo.cosmos.azure.com>'),
-//            'database' => 'myappdb'
+			'database' => env('DB_DATABASE', 'laravel-mongodb'),
 		],
 		
         'sqlite' => [
