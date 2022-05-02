@@ -1,3 +1,19 @@
+
+{{--DECOMMENTA IL PEZZETTO SOTTO ED ELIMINA QUELLO ATTUALMENTE ATTIVO SE LE NUOVE ROTTE VANNO IN BLANK PAGE--}}
+{{--<x-layouts.base>--}}
+{{--    @include('layouts.navbars.auth.nav')--}}
+{{--    @include('components.plugins.fixed-plugin')--}}
+{{--    {{ $slot }}--}}
+{{--    <main>--}}
+{{--        <div class="container-fluid">--}}
+{{--            <div class="row">--}}
+{{--                @include('layouts.footers.auth.footer')--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </main>--}}
+{{--</x-layouts.base>--}}
+
+
 <x-layouts.base>
     {{-- If the user is authenticated --}}
     @auth()
